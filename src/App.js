@@ -9,6 +9,7 @@ function App() {
   return (
     <div>
       <h1>{t("welcome")}</h1>
+      <p>{t("title")}</p>
       <LanguageSwitcher />
     </div>
   );
