@@ -1,17 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import translationEN from "./public/locales/en.json";
-import translationMm from "./public/locales/mm.json";
+import translationEN from "./locales/en.json";
+import translationMm from "./locales/mm.json";
 
 const resources = {
   en: { translation: translationEN },
-  es: { translation: translationMm },
+  mm: { translation: translationMm },
 };
 
 i18n
@@ -26,9 +26,9 @@ i18n
     },
   });
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
